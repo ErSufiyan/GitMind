@@ -18,7 +18,7 @@ public class GitHubService {
 
     private final GitHubClient gitHubClient;
     private final ObjectMapper objectMapper;
-//    private final CommitProcessService commitProcessService;
+    private final CommitProcessService commitProcessService;
 
     public CommitResponse getCommit(GitHubClientRequest request) {
 
@@ -61,9 +61,7 @@ public class GitHubService {
 
             commitResponse.setFiles(files);
 
-            CommitProcessService process = new CommitProcessService();
-
-            return process.response(commitResponse);
+            return commitProcessService.response(commitResponse);
 
         }
 
