@@ -61,6 +61,7 @@ public class GitHubService {
 
             commitResponse.setFiles(files);
 
+            System.out.println("Processing commit...");
             return commitProcessService.response(commitResponse);
 
         }
